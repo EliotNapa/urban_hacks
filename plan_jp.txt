@@ -13,3 +13,8 @@
 ・これ以外のパターンがあるか？
 A B op C D op op
 A B op C op D op op
+
+A B C op op D op
+
+A B C D op op op
+  
