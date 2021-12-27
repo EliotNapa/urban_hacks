@@ -26,8 +26,8 @@ def main():
     urban hacks解法総当り計算
     """
     #問題文数字リスト
-    #src_nums = ["1", "3", "3", "7"]
-    src_nums = ["3", "4", "7", "8"]
+    src_nums = ["1", "3", "3", "7"]
+    #src_nums = ["3", "4", "7", "8"]
 
     #別の問題サンプル
     #src_nums = ["1", "2", "3", "4"]
@@ -152,17 +152,55 @@ def print_formula(cur_calc, msg):
     """
     逆ポーランド演算子表示
     """
-    print("{8}# {0} {1} {2} {3} {4} {5} {6} = {7}".format(
-        cur_calc.a,
-        cur_calc.b,
-        cur_calc.c,
-        cur_calc.d,
-        cur_calc.op1,
-        cur_calc.op2,
-        cur_calc.op3,
-        cur_calc.result,
-        msg
-    ))
+    if msg == "F1":
+        print("{8}# {0} {1} {2} {3} {4} {5} {6} = {7}".format(
+            cur_calc.a,
+            cur_calc.b,
+            cur_calc.op1,
+            cur_calc.c,
+            cur_calc.d,
+            cur_calc.op2,
+            cur_calc.op3,
+            cur_calc.result,
+            msg
+        ))
+    elif msg == "F2":
+        print("{8}# {0} {1} {2} {3} {4} {5} {6} = {7}".format(
+            cur_calc.a,
+            cur_calc.b,
+            cur_calc.op1,
+            cur_calc.c,
+            cur_calc.op2,
+            cur_calc.d,
+            cur_calc.op3,
+            cur_calc.result,
+            msg
+        ))
+    elif msg == "F3":
+        print("{8}# {0} {1} {2} {3} {4} {5} {6} = {7}".format(
+            cur_calc.a,
+            cur_calc.b,
+            cur_calc.c,
+            cur_calc.op1,
+            cur_calc.op2,
+            cur_calc.d,
+            cur_calc.op3,
+            cur_calc.result,
+            msg
+        ))
+    else:
+        print("{8}# {0} {1} {2} {3} {4} {5} {6} = {7}".format(
+            cur_calc.a,
+            cur_calc.b,
+            cur_calc.c,
+            cur_calc.d,
+            cur_calc.op1,
+            cur_calc.op2,
+            cur_calc.op3,
+            cur_calc.result,
+            msg
+        ))
+
     
 
 def exec_revpol(op, work_list):
