@@ -27,6 +27,8 @@ def main():
     """
     #問題文数字リスト
     src_nums = ["1", "3", "3", "7"]
+
+    #別の問題サンプル
     #src_nums = ["1", "2", "3", "4"]
 
     #演算子リスト
@@ -44,7 +46,8 @@ def main():
     #逆ポーランド用スタック
     calc_list = []
 
-    #演算子の順列を作成する
+    #演算子の順列を作成し、数列と組み合わせて
+    #逆ポーランド式を作成する
     for i in result_list:
         for op1 in op_list:
             for op2 in op_list:
@@ -81,18 +84,11 @@ def main():
         calc_work.insert(0, cur_calc.d)
         exec_revpol(cur_calc.op2, calc_work)
         exec_revpol(cur_calc.op3, calc_work)
-        ans = calc_work.pop()
-        print("F1#{0} {1} {2} {3} {4} {5} {6} = {7}".format(
-            cur_calc.a,
-            cur_calc.b,
-            cur_calc.op1,
-            cur_calc.c,
-            cur_calc.d,
-            cur_calc.op2,
-            cur_calc.op3,
-            ans
-        ))
-        if 10 == ans:
+        cur_calc.result = calc_work.pop()
+
+        # print_formula(cur_calc, "F1")
+        if 10 == cur_calc.result:
+            print_formula(cur_calc, "F4")
             return
 
         calc_work.clear()
@@ -106,18 +102,11 @@ def main():
         exec_revpol(cur_calc.op2, calc_work)
         calc_work.insert(0, cur_calc.d)
         exec_revpol(cur_calc.op3, calc_work)
-        ans = calc_work.pop()
-        print("F2#{0} {1} {2} {3} {4} {5} {6} = {7}".format(
-            cur_calc.a,
-            cur_calc.b,
-            cur_calc.op1,
-            cur_calc.c,
-            cur_calc.op2,
-            cur_calc.d,
-            cur_calc.op3,
-            ans
-        ))
-        if 10 == ans:
+        cur_calc.result = calc_work.pop()
+
+        # print_formula(cur_calc, "F2")
+        if 10 == cur_calc.result:
+            print_formula(cur_calc, "F4")
             return
 
         calc_work.clear()
@@ -131,18 +120,11 @@ def main():
         exec_revpol(cur_calc.op2, calc_work)
         calc_work.insert(0, cur_calc.d)
         exec_revpol(cur_calc.op3, calc_work)
-        ans = calc_work.pop()
-        print("F3#{0} {1} {2} {3} {4} {5} {6} = {7}".format(
-            cur_calc.a,
-            cur_calc.b,
-            cur_calc.c,
-            cur_calc.op1,
-            cur_calc.op2,
-            cur_calc.d,
-            cur_calc.op3,
-            ans
-        ))
-        if 10 == ans:
+        cur_calc.result = calc_work.pop()
+
+        # print_formula(cur_calc, "F3")
+        if 10 == cur_calc.result:
+            print_formula(cur_calc, "F4")
             return
 
         calc_work.clear()
@@ -156,20 +138,30 @@ def main():
         exec_revpol(cur_calc.op1, calc_work)
         exec_revpol(cur_calc.op2, calc_work)
         exec_revpol(cur_calc.op3, calc_work)
-        ans = calc_work.pop()
-        print("F4#{0} {1} {2} {3} {4} {5} {6} = {7}".format(
-            cur_calc.a,
-            cur_calc.b,
-            cur_calc.c,
-            cur_calc.d,
-            cur_calc.op1,
-            cur_calc.op2,
-            cur_calc.op3,
-            ans
-        ))
-        if 10 == ans:
+        cur_calc.result = calc_work.pop()
+
+        # print_formula(cur_calc, "F4")
+        if 10 == cur_calc.result:
+            print_formula(cur_calc, "F4")
             return
 
+
+def print_formula(cur_calc, msg):
+    """
+    逆ポーランド演算子表示
+    """
+    print("{8}# {0} {1} {2} {3} {4} {5} {6} = {7}".format(
+        cur_calc.a,
+        cur_calc.b,
+        cur_calc.c,
+        cur_calc.d,
+        cur_calc.op1,
+        cur_calc.op2,
+        cur_calc.op3,
+        cur_calc.result,
+        msg
+    ))
+    
 
 def exec_revpol(op, work_list):
     """
