@@ -26,7 +26,8 @@ def main():
     urban hacks解法総当り計算
     """
     #問題文数字リスト
-    src_nums = ["1", "3", "3", "7"]
+    #src_nums = ["1", "3", "3", "7"]
+    src_nums = ["3", "4", "7", "8"]
 
     #別の問題サンプル
     #src_nums = ["1", "2", "3", "4"]
@@ -89,7 +90,7 @@ def main():
 
         # print_formula(cur_calc, "F1")
         if 10 == cur_calc.result:
-            print_formula(cur_calc, "F4")
+            print_formula(cur_calc, "F1")
             return
 
         calc_work.clear()
@@ -107,7 +108,7 @@ def main():
 
         # print_formula(cur_calc, "F2")
         if 10 == cur_calc.result:
-            print_formula(cur_calc, "F4")
+            print_formula(cur_calc, "F2")
             return
 
         calc_work.clear()
@@ -125,7 +126,7 @@ def main():
 
         # print_formula(cur_calc, "F3")
         if 10 == cur_calc.result:
-            print_formula(cur_calc, "F4")
+            print_formula(cur_calc, "F3")
             return
 
         calc_work.clear()
