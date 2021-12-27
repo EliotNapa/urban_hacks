@@ -43,11 +43,11 @@ def main():
     #順列を作成する
     process_ary(src_nums, 0, len(src_nums), nums_holder, result_list)
 
-    #逆ポーランド用スタック
+    #逆ポーランド式要素全順列格納用リスト
     calc_list = []
 
     #演算子の順列を作成し、数列と組み合わせて
-    #逆ポーランド式を作成する
+    #逆ポーランド式要素全順列を作成する
     for i in result_list:
         for op1 in op_list:
             for op2 in op_list:
@@ -65,7 +65,8 @@ def main():
     calc_work = []
 
 
-
+    #逆ポーランド式要素全順列より4パターンの
+    #逆ポーランド演算式を計算し答えを求める
     for cur_calc in calc_list:
         calc_work.clear()
         #逆ポーランド演算式1
