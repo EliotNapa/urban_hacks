@@ -37,11 +37,15 @@ class CalcRecord():
 def main():
 
     t1 = time.time() 
-    #src_list, count = calc_puzle(1, 3, 3, 7)
-    #
-    #数字の重複を省くべきだが。。。
-    #(1,2,3,1) === (1,1,2,3)
     exist_count = 0
+    # src_list, count = calc_puzle(1, 3, 3, 7, detail_print = True)
+    # src_list, count = calc_puzle(4, 6, 7, 9, detail_print = True)
+    # if count > 0:
+    #     exist_count += 1
+    # print("{0} count = {1}".format(src_list, count))
+    #
+    #数字の重複を省く
+    #(1,2,3,1) === (1,1,2,3)
     for a in range(0, 10):
         for b in range(a, 10):
             for c in range(b, 10):
