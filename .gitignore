@@ -127,3 +127,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+presen_jp.txt
+result.txt
